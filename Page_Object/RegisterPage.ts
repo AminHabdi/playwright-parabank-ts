@@ -1,0 +1,62 @@
+import { Page, Locator } from '@playwright/test';
+import registerData from '../resources/testData.json'
+
+export class RegisterPage {
+    readonly page: Page;
+    readonly registerLink: Locator;
+    readonly firstnameInput: Locator;
+    readonly lastnameInput: Locator;
+    readonly addressInput: Locator;
+    readonly cityInput: Locator;
+    readonly stateInput: Locator;
+    readonly zipCodeInput: Locator;
+    readonly phoneInput: Locator;
+    readonly ssnInput: Locator;
+    readonly usernameInput: Locator;
+    readonly passwordInput: Locator;
+    readonly confirmInput: Locator;
+    readonly registerButton: Locator;
+
+
+
+    constructor(page: Page) {
+        
+        this.page = page;
+        this.registerLink = this.page.getByRole('link', { name: 'Register' });
+        this.firstnameInput = this.page.locator('[id="customer.firstName"]');
+        this.lastnameInput = this.page.locator('[id="customer.lastName"]');
+        this.addressInput = this.page.locator('[id="customer.address.street"]');
+        this.cityInput = this.page.locator('[id="customer.address.city"]');
+        this.stateInput = this.page.locator('[id="customer.address.state"]');
+        this.zipCodeInput = this.page.locator('[id="customer.address.zipCode"]');
+        this.phoneInput = this.page.locator('[id="customer.phoneNumber"]');
+        this.ssnInput = this.page.locator('[id="customer.ssn"]');
+        this.usernameInput = this.page.locator('[id="customer.username"]');
+        this.passwordInput = this.page.locator('[id="customer.password"]');
+        this.confirmInput = this.page.locator('[id="repeatedPassword"]');
+        this.registerButton = this.page.getByRole('button', { name: 'Register' });
+
+    }
+        
+    async clickRegisterLink() {
+       await this.registerLink.click();
+    }
+
+    async fillRegistrationForm(userData: any) {
+        await this.firstnameInput.fill(userData.firstName);
+        await this.lastnameInput.fill(userData.lastName);
+        await this.addressInput.fill(userData.address);
+        await this.cityInput.fill(userData.city);
+        await this.stateInput.fill(userData.state);
+        await this.zipCodeInput.fill(userData.zipCode);
+        await this.phoneInput.fill(userData.phone);
+        await this.ssnInput.fill(userData.ssn);
+        await this.usernameInput.fill(userData.username);
+        await this.passwordInput.fill(userData.password);
+        await this.confirmInput.fill(userData.password);      
+    }
+    
+    async submitRegistration() {
+        await this.registerButton.click();
+    }
+}
