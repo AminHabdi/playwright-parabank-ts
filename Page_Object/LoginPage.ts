@@ -6,9 +6,7 @@ export class LoginPage {
     readonly loginButton: Locator;
     readonly logoutButton: Locator;
     readonly usernameInput: Locator;
-    readonly passwordInput: Locator;
-
-    
+    readonly passwordInput: Locator;    
 
     constructor(page: Page) {
         this.page = page;

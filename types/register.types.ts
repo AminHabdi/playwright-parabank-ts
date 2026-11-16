@@ -13,5 +13,4 @@ export interface UserData {
 
 export interface TestDataStructure {
     signingupValidData: UserData;
-    signingupInvalidData: UserData;
 }

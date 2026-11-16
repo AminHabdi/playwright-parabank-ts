@@ -11,17 +11,5 @@
       "ssn": "987-65-4321",
       "username": "testuser",
       "password": "Password123"
-    },
-    "signingupInvalidData": {
-      "firstName": "Max2",
-      "lastName": "Mustermann2",
-      "address": "Musterstraße 1",
-      "city": "Musterstadt1",
-      "state": "Mst1",
-      "zipCode": "123456",
-      "phone": "0123456789",
-      "ssn": "987-65-4321",
-      "username": "testuser1",
-      "password": "Password1233"
     }
   }
