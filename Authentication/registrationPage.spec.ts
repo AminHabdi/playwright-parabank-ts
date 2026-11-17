@@ -13,6 +13,7 @@ test.beforeEach(async ({ page }) => {
 })
 test('Registration of a user', async ({ page }) => {
     const registerPage = new RegisterPage(page);
+
     const uniqueUseData = {
         ...registerDataJson.signingupValidData,
         username: `user_${Math.floor(Math.random() * 10000000)}`
